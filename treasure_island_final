@@ -1,0 +1,36 @@
+from treasure_logo import logo
+print(logo)
+
+print("Welcome to treasure island. Your mission is to find the treasure")
+direction = input("You are at a cross-roads. Where do you want to go? Type 'left' or 'right'? \n").lower()
+if direction == "left":
+    wait_or_swim = input("You come to a lake. There is an island in the middle of the lake."
+                         "Type 'wait' to wait for boat or 'swim' to swim across? \n").lower()
+    if wait_or_swim == "wait":
+        door_chosen = input("You arrive at the island safe. There is a house with 3 doors:"
+                            " red, yellow, and blue. Which color do you choose? \n").lower()
+        if door_chosen == "blue":
+            print("You enter a room of beasts. You die, game over.")
+        elif door_chosen == "yellow":
+            print("You found treasure. You win")
+        elif door_chosen == "red":
+            print("You enter a room with no floor. You die, game over.")
+        elif door_chosen != "red" or door_chosen != "blue" or door_chosen != "yellow":
+            print("You have chosen a door that does not exist. Lightning strikes and you have no"
+                  " shelter from the subsequent forest fire.")
+        # else:
+        #     print("You enter a room with no floor. You die, game over.")
+
+
+    elif wait_or_swim == "swim":
+        print("Check for crocs next time. You had no chance against 30ft monster.")
+
+    elif wait_or_swim != "wait" or wait_or_swim != "swim":
+        print("Your indecision has cost you! The sun has set and you\'re consumed by nightly terrors")
+
+elif direction != "right" or direction != "left":
+    print("You have chosen a path that does not exist. You\'re dead")
+
+else:
+    print("Chosen path leads you down to a tribe of head-hunters. You disappear without a trace."
+          " Game over")
